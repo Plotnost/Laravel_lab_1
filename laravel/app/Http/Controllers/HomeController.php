@@ -48,8 +48,8 @@ class HomeController extends Controller
         $validated = $request->validate(self::BB_VALIDATOR,
             self::BB_ERROR_MESSAGES);
         Auth::user()->bbs()->create(['title' => $validated['title'],
-            'content' => $request-> $validated['content'],
-            'price' => $request->$validated['price']]);
+            'content' => $validated['content'],
+            'price' => $validated['price']]);
         return redirect()->route('home');
     }
 
@@ -59,9 +59,9 @@ class HomeController extends Controller
     public function updateBb(Request $request, Bb $bb) {
         $validated = $request->validate(self::BB_VALIDATOR,
             self::BB_ERROR_MESSAGES);
-        $bb->fill(['title' => $request->$validated['title'],
-            'content' => $request->$validated['content'],
-            'price' => $request->$validated['price']]);
+        $bb->fill(['title' => $validated['title'],
+            'content' => $validated['content'],
+            'price' => $validated['price']]);
         $bb->save();
         return redirect()->route('home');
     }
