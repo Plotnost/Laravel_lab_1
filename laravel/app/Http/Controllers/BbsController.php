@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Bb; // Перемещено сюда
 
 class BbsController extends Controller {
@@ -19,4 +18,3 @@ class BbsController extends Controller {
     }
 
 }
-
