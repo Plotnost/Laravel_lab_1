@@ -23,4 +23,4 @@ Route::get('/home/{bb}/delete',
     ->name('bb.delete')->middleware('can:destroy,bb');
 Route::delete('/home/{bb}', [HomeController::class, 'destroyBb'])
     ->name('bb.destroy')->middleware('can:destroy,bb');
-Route::get('/{bb}', 'BbsController@detail')->name('detail');
+Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');

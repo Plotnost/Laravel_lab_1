@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Bb; // Перемещено сюда
+use App\Models\Bb;
 
 class BbsController extends Controller {
     public function index() {
